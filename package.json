@@ -1,0 +1,39 @@
+{
+  "name": "phaser-3_shooter_capstone_game",
+  "version": "1.0.0",
+  "description": "The Shooter_Game is creatively designed by implementing  the Phaser-3 Framework concepts.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --progress --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rumbie-Mudzie7/Phaser-3_Shooter_Capstone_Game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rumbie-Mudzie7/Phaser-3_Shooter_Capstone_Game/issues"
+  },
+  "homepage": "https://github.com/Rumbie-Mudzie7/Phaser-3_Shooter_Capstone_Game#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.17.2",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "phaser": "^3.52.0"
+  }
+}
