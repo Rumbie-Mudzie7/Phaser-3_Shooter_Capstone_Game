@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import SpaceScene from './scenes/SpaceScene';
+import { Laser, LaserGroup,  SpaceScene, } from './scenes/SpaceScene';
 
 const config = {
   type: Phaser.AUTO,
