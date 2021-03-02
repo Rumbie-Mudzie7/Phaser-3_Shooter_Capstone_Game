@@ -79,11 +79,7 @@ class SpaceScene extends Phaser.Scene {
     function enemyGenerator() {
       const xCoordinate = Math.random() * 800;
       const randomEnemy = enemiesList[Math.floor(Math.random() * 2)];
-      enemies.create(xCoordinate, 10, randomEnemy);
-      enemies.children.iterate((child) => {
-        child.setScale(0.2);
-      });
-
+      enemies.create(xCoordinate, 10, randomEnemy).setScale(.2).setVelocityY(300);
     }
 
     const enemyObject = { callback: enemyGenerator, delay: 150, 
