@@ -26,23 +26,22 @@ class Laser extends Phaser.Physics.Arcade.Sprite {
 }
 
 class LaserGroup extends Phaser.Physics.Arcade.Group {
+
   constructor(scene) {
     // Call the super constructor, passing in a world and a scene
-    super(scene.physics.world, scene);
-
-    // Initialize the group
-    this.createMultiple({
-      classType: Laser,
-      frameQuantity: 30, //maximum shots to be fired at an interval
-      active: false,
-      visible: false,
-      key: 'laser'
-    })
+    super(scene.physics.world, scene, { key:'LaserGroup'});
   }
 
   triggerLaser(x, y) {
     // Get the first available sprite in the group
-    const laser = this.getFirstDead(false);
+    this.createMultiple({
+      classType: Laser,
+      frameQuantity: 0, //maximum shots to be fired at an interval
+      active: false,
+      visible: false,
+      key: 'laser'
+    })
+    const laser = this.getFirstDead(true, x, y);
     if (laser) {
       laser.trigger(x, y);
     }
@@ -52,7 +51,7 @@ class LaserGroup extends Phaser.Physics.Arcade.Group {
 
 class SpaceScene extends Phaser.Scene {
   constructor() {
-    super();
+    super('SpaceScene');
     this.ship;
     this.laserGroup;
     this.inputKeys;
@@ -79,13 +78,22 @@ class SpaceScene extends Phaser.Scene {
     function enemyGenerator() {
       const xCoordinate = Math.random() * 800;
       const randomEnemy = enemiesList[Math.floor(Math.random() * 2)];
-      enemies.create(xCoordinate, 10, randomEnemy).setScale(.2).setVelocityY(300);
+      enemies.create(xCoordinate, 10, randomEnemy).setScale(.2).setVelocityY(50);
     }
 
-    const enemyObject = { callback: enemyGenerator, delay: 150, 
+    const enemyObject = { callback: enemyGenerator, delay: 600, 
                         callbackScope: this, loop: true, };
 
     this.enemyGeneratorLoop = this.time.addEvent(enemyObject);
+
+    // enemy collides with laser
+    this.physics.add.collider(enemies, this.laserGroup, (enemy, laser) => {
+      
+      enemy.destroy();
+      laser.destroy();
+      // this.score += 10;
+      // this.scoreText.setText(`Score: ${this.score}`);
+    });
   }
 
   addShip() {
@@ -105,6 +113,13 @@ class SpaceScene extends Phaser.Scene {
       this.launchLaser();
     });
 
+    this.input.keyboard.on('keydown', event => {
+      
+      if(event.code == "Space") {
+        this.launchLaser();
+      }
+      
+    });
   }
 
   launchLaser() {
@@ -112,12 +127,8 @@ class SpaceScene extends Phaser.Scene {
   }
 
   update() {
-
     if (this.cursors.left.isDown) {
       this.ship.x -= 8;
-    }
-    else if (this.cursors.space.isDown) {
-      this.launchLaser();
     }
     else if (this.cursors.right.isDown) {
       this.ship.x += 8;
