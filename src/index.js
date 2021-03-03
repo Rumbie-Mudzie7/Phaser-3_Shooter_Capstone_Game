@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 
 import { Laser, LaserGroup,  SpaceScene, } from './scenes/SpaceScene';
+import LoadingScene from './scenes/LoadingScene';
 
 const config = {
   type: Phaser.AUTO,
@@ -13,7 +14,8 @@ const config = {
       gravity: { y: 0 }
     }
   },
-  scene: SpaceScene
+  scene: [ LoadingScene, SpaceScene ]
+  
 };
 
 
