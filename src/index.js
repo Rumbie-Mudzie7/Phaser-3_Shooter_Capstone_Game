@@ -11,7 +11,8 @@ const config = {
     default: 'arcade',
     arcade: {
       debug: false,
-      gravity: { y: 0 }
+      gravity: { y: 0 },
+      enableBody: true
     }
   },
   scene: [ LoadingScene, SpaceScene ]
