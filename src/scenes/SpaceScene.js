@@ -1,5 +1,9 @@
 import Phaser from 'phaser';
 
+let gameScore = {
+  score: 0
+  }
+
 class Laser extends Phaser.Physics.Arcade.Sprite {
   constructor(scene, x, y) {
     super(scene, x, y, 'laser');
@@ -58,7 +62,6 @@ class SpaceScene extends Phaser.Scene {
     this.cursors;
     this.score = 0;
     this.laserSound;
-    this.GameOverText = false;
   }
 
   preload() {
@@ -84,9 +87,9 @@ class SpaceScene extends Phaser.Scene {
     {fill: '#fff', 
       fontSize: 30
     })
-    this.gameOverText = this.add.text(50, 100, 'Game Over', {
-      fontSize: '15px', fill: '#fff'
-    })
+    // this.gameOverText = this.add.text(50, 100, 'Game Over', {
+    //   fontSize: '15px', fill: '#fff'
+    // })
     
     const enemies = this.physics.add.group();
     const enemiesList = ['enemy1', 'enemy2'];
@@ -104,25 +107,24 @@ class SpaceScene extends Phaser.Scene {
 
     // enemy collides with laser
     this.physics.add.collider(enemies, this.laserGroup, (enemy, laser) => {
-      this.score += 10;
+      gameScore.score += 10;
       enemy.destroy();
       laser.destroy();
-      this.scoreText.setText(`Score: ${this.score}`);
+      this.scoreText.setText(`Score: ${gameScore.score}`);
+      
     });
 
+    //enemy collides with ship
     this.physics.add.collider(this.ship, enemies, () =>  {
-      enemyGeneratorLoop.destroy();
+      this.enemyGeneratorLoop.destroy();
       this.physics.pause();
-      // this.add.text(180, 250, 'Game Over', {
-      //   fontSize: '15px', fill: '#fff'
-      // })
-      // this.GameOverText.visible = true;
-    }) 
+      this.scene.stop('SpaceScene');
+      this.scene.start('GameOverScene');
 
     // this.input.on('pointerup', () => {
     //   gameState.score = 0;
     //   this.scene.restart();
-    // });
+    });
   }
 
   addShip() {
@@ -200,4 +202,4 @@ class SpaceScene extends Phaser.Scene {
 }
 
 
-export { Laser, LaserGroup, SpaceScene };
+export { Laser, LaserGroup, SpaceScene, gameScore };
