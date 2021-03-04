@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 
 import { Laser, LaserGroup,  SpaceScene, } from './scenes/SpaceScene';
 import LoadingScene from './scenes/LoadingScene';
+import GameOverScene from './scenes/GameOverScene';
 
 const config = {
   type: Phaser.AUTO,
@@ -15,7 +16,7 @@ const config = {
       enableBody: true
     }
   },
-  scene: [ LoadingScene, SpaceScene ]
+  scene: [ LoadingScene, SpaceScene, GameOverScene]
   
 };
 
