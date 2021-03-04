@@ -46,7 +46,7 @@ class LaserGroup extends Phaser.Physics.Arcade.Group {
       laser.trigger(x, y);
     }
   }
-
+  
 }
 
 class SpaceScene extends Phaser.Scene {
@@ -56,6 +56,9 @@ class SpaceScene extends Phaser.Scene {
     this.laserGroup;
     this.inputKeys;
     this.cursors;
+    this.score = 0;
+    this.laserSound;
+    this.GameOverText = false;
   }
 
   preload() {
@@ -64,14 +67,27 @@ class SpaceScene extends Phaser.Scene {
     this.load.image('ship', '/assets/images/Spaceship_tut.png');
     this.load.image('enemy1', '/assets/images/Bat2.png');
     this.load.image('enemy2', '/assets/images/enemy_game_spider.png');
+    this.load.audio('laserfire', '/assets/sounds/laserfire.ogg');
   }
 
+
   create() {
+    
+    this.laserSound = this.sound.add('laserfire', { loop: false });
+           
     let spaceBackground = this.add.image(0, 0, 'space-bg').setOrigin(0, 0);
     this.laserGroup = new LaserGroup(this);
     this.addShip();
     this.addEvents();
     this.cursors = this.input.keyboard.createCursorKeys();
+    this.scoreText = this.add.text(20, 50, 'Score: ' + this.score, 
+    {fill: '#fff', 
+      fontSize: 30
+    })
+    this.gameOverText = this.add.text(50, 100, 'Game Over', {
+      fontSize: '15px', fill: '#fff'
+    })
+    
     const enemies = this.physics.add.group();
     const enemiesList = ['enemy1', 'enemy2'];
   
@@ -88,12 +104,25 @@ class SpaceScene extends Phaser.Scene {
 
     // enemy collides with laser
     this.physics.add.collider(enemies, this.laserGroup, (enemy, laser) => {
-      
+      this.score += 10;
       enemy.destroy();
       laser.destroy();
-      // this.score += 10;
-      // this.scoreText.setText(`Score: ${this.score}`);
+      this.scoreText.setText(`Score: ${this.score}`);
     });
+
+    this.physics.add.collider(this.ship, enemies, () =>  {
+      enemyGeneratorLoop.destroy();
+      this.physics.pause();
+      // this.add.text(180, 250, 'Game Over', {
+      //   fontSize: '15px', fill: '#fff'
+      // })
+      // this.GameOverText.visible = true;
+    }) 
+
+    // this.input.on('pointerup', () => {
+    //   gameState.score = 0;
+    //   this.scene.restart();
+    // });
   }
 
   addShip() {
@@ -124,6 +153,7 @@ class SpaceScene extends Phaser.Scene {
 
   launchLaser() {
     this.laserGroup.triggerLaser(this.ship.x, this.ship.y - 20);
+    this.laserSound.play();
   }
 
   update() {
