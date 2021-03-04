@@ -7,12 +7,13 @@ class GameOverScene extends Phaser.Scene {
   }
   
   preload() {
-    this.load.image('gameOverBg', '')
+    this.load.image('gameOverBg', '/assets/images/gameoverbg.png');
   }
 
 
   create() {
-      this.gameOverText = this.add.text(50, 100, 'Game Over \n Your Score: ' + gameScore.score,  {
+      let gameOverBackground = this.add.image(0, 0, 'gameOverBg').setOrigin(0, 0);
+      this.gameOverText = this.add.text(200, 300, 'Game Over \n Your Score: ' + gameScore.score,  {
       fontSize: '40px', fill: '#fff'
     })
   }
