@@ -4,8 +4,7 @@ import { SpaceScene } from './SpaceScene';
 class LoadingScene extends Phaser.Scene {
   constructor() {
     super('LoadingScene');
-    // this.logo;
-
+    
   }
 
   preload() {
