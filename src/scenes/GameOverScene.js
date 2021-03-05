@@ -16,6 +16,7 @@ class GameOverScene extends Phaser.Scene {
       this.gameOverText = this.add.text(200, 300, 'Game Over \n Your Score: ' + gameScore.score,  {
       fontSize: '40px', fill: '#fff'
     })
+    gameScore.score = 0;
   }
 
 }
