@@ -73,7 +73,10 @@ this.load.on('progress', function (value) {
     const logo = this.add.image(this.scale.width/2, this.scale.height/2 , 'logo').setScale(.5);
     this.input.on('pointerdown', () => this.scene.start('SpaceScene'));
   }
-  
+   
 };
+
+
+
 
 export default LoadingScene;
