@@ -76,7 +76,4 @@ this.load.on('progress', function (value) {
    
 };
 
-
-
-
 export default LoadingScene;
