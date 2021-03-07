@@ -1,50 +1,35 @@
-import Phaser from 'phaser';
-
+import Phaser from 'phaser'
+let gameScore = {
+  score: 0
+}
 class UserInputScene extends Phaser.Scene {
-  constructor() {
-    super('UserInputScene');
+  constructor () {
+    super('UserInputScene')
   }
-
-  preload() {
-    this.load.html("form", "form.html");
+  preload () {
+    this.load.html('form', 'form.html')
   }
-
-  create() {
-    
-    this.nameInput = this.add.dom(640, 360).createFromCache("form");
-
-    this.add.text(40, 250, "Hello, " , {
-      fill: "#FFFFFF",
-      fontSize: 60,
-      fontWeight: "bold"
-    }).setOrigin(.5);
-
-    this.returnKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
-
-    this.returnKey.on("down", event => {
-    // let name = this.nameInput.getChildByName("name");
-    // if(name.value != "") {
-    //     this.message.setText("Hello, " + name.value);
-    //     name.value = "";
-    // }
-    let nameInput = document.querySelector('input').value;
-     if(nameInput) {
-        // this.message.setText("Hello, " + nameInput);
-        // nameInput = "";
-        console.log(nameInput);
-    } else {
-      // this.message.setText("Please enter a valid name!")
-    }
-    
-  });
-
+  create () {
+    this.form = document.querySelector('#input-form')
+    this.nameInput = document.querySelector('#name')
+    this.form.style.display = 'block';
+    this.add
+      .text(360, 240, 'Please enter your name to get started', {
+        fill: '#FFFFFF',
+        fontSize: 16,
+        fontWeight: 'bold'
+      })
+      .setOrigin(0.5)
+    this.returnKey = this.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.ENTER
+    )
+    this.returnKey.on('down', () => {
+      if (this.nameInput.value) {
+        gameScore.playerName = this.nameInput.value;
+        this.scene.start('SpaceScene')
+      }
+    })
+  }
+  update () {}
 }
-
-update() {
-
-}
-
-
-}
-
-export default UserInputScene;
+export {UserInputScene , gameScore }
