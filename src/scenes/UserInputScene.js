@@ -2,6 +2,7 @@ import Phaser from 'phaser'
 let gameScore = {
   score: 0
 }
+
 class UserInputScene extends Phaser.Scene {
   constructor () {
     super('UserInputScene')
