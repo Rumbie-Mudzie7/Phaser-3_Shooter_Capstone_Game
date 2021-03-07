@@ -5,13 +5,8 @@
   box-sizing: border-box;
 }
 
-form {
-  /* position: absolute;
-  top: -335px;
-  left: 152px; */
-}
-
 #input-form {
+  display: none;
   padding: 15px;
   background-color: #570628;
   width: 430px;
