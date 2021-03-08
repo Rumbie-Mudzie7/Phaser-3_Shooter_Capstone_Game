@@ -7,9 +7,11 @@ class UserInputScene extends Phaser.Scene {
   constructor () {
     super('UserInputScene')
   }
+
   preload () {
     this.load.html('form', 'form.html')
   }
+  
   create () {
     this.form = document.querySelector('#input-form')
     this.nameInput = document.querySelector('#name')
