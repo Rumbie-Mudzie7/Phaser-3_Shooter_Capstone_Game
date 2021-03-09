@@ -1,5 +1,4 @@
-import Phaser from 'phaser'
-
+import Phaser from 'phaser';
 import { gameScore } from './UserInputScene';
 class GameOverScene extends Phaser.Scene {
   constructor () {

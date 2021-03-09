@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import { gameScore } from './UserInputScene'
+import {putScore} from '../api/request'
 
 class Laser extends Phaser.Physics.Arcade.Sprite {
   constructor (scene, x, y) {
@@ -99,6 +100,7 @@ class SpaceScene extends Phaser.Scene {
     })
     //enemy collides with ship
     this.physics.add.collider(this.ship, enemies, () => {
+      putScore(gameScore.playerName, gameScore.score)
       this.enemyGeneratorLoop.destroy()
       this.physics.pause()
       this.scene.stop('SpaceScene')
