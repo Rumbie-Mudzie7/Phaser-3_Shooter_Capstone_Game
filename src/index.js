@@ -6,6 +6,7 @@ import GameOverScene from './scenes/GameOverScene';
 import TitleScene from './scenes/TitleScene';
 import CreditsScene from './scenes/CreditsScene';
 import LeaderBoardScene from './scenes/LeaderBoardScene';
+import OptionsScene from './scenes/OptionsScene';
 
 const config = {
   type: Phaser.AUTO,
@@ -23,6 +24,6 @@ const config = {
       enableBody: true
     }
   },
-  scene: [  TitleScene, LoadingScene, UserInputScene, SpaceScene, GameOverScene, CreditsScene,LeaderBoardScene]
+  scene: [  TitleScene, LoadingScene, UserInputScene, SpaceScene, GameOverScene, CreditsScene,LeaderBoardScene, OptionsScene]
 };
   const game = new Phaser.Game(config);
