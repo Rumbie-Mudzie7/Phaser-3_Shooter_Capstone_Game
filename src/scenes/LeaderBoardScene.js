@@ -34,11 +34,11 @@ class LeaderBoardScene extends Phaser.Scene {
     this.add.text(400, position, 'NAME').setTint(0x00ff00);
     this.add.text(500, position, 'SCORE').setTint(0x00ff00);
     const request = new Request();
-    this.usersScore = await request.getScores();
-    this.usersSortedScore = this.usersScore.result.sort((a, b) => (a.score > b.score ? -1 : 1));
+    this.playerScore = await request.getScores();
+    this.playerSortedScore = this.playerScore.result.sort((a, b) => (a.score > b.score ? -1 : 1));
 
     position += 25;
-    this.usersSortedScore.forEach((result, index) => {
+    this.playerSortedScore.forEach((result, index) => {
       if (index < 10) {
         this.add.text(300, position, `  ${index + 1} `).setTint(0xff0000);
 
