@@ -5,6 +5,7 @@ class GameOverScene extends Phaser.Scene {
     super('GameOverScene')
   }
   preload () {
+
     this.load.image('gameOverBg', '/assets/images/gameoverbg.png')
   }
   create () {
@@ -20,7 +21,36 @@ class GameOverScene extends Phaser.Scene {
         fill: '#fff'
       }
     )
+
     gameScore.score = 0
+
+    this.add
+    .text(
+      this.scale.width * 0.5,
+      this.scale.height * 0.8,
+      'Press enter to go back to the Menu.',
+
+    )
+    .setOrigin();
+
+    this.add
+    .text(
+      this.scale.width * 0.5,
+      this.scale.height * 0.9,
+      'Press space to restart game.',
+      
+    )
+    .setOrigin();
+
+    this.input.keyboard.once('keydown-ENTER', () => {
+      this.scene.start('TitleScene');
+    });
+
+    this.input.keyboard.once('keydown-SPACE', () => {
+      this.scene.start('SpaceScene');
+    });
+
+    
   }
 }
 export default GameOverScene;
