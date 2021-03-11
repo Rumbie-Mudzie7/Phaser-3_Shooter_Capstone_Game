@@ -10,7 +10,7 @@ class LoadingScene extends Phaser.Scene {
     progressBox.fillStyle(0x222222, 0.8);
     progressBox.fillRect(240, 270, 320, 50);
     this.load.image('logo', '/assets/images/galaxy4.png');
-    for (let i = 0; i < 500; i++) {
+    for (let i = 0; i < 100; i++) {
         this.load.image('logo'+i, '/assets/images/galaxy4.png');
     }
 this.load.on('progress', function (value) {
