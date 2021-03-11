@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 
-import Credits from './CreditsScene'
+import Credits from './CreditsScene';
+import OptionsScene from './OptionsScene';
 
 class TitleScene extends Phaser.Scene {
   constructor() {
@@ -37,8 +38,8 @@ class TitleScene extends Phaser.Scene {
     this.optionsText = this.add.text(this.scale.width/2, this.scale.height/2 -60, 'Options', { fontSize: '32px', fill: '#57154a' }).setOrigin(0.5, 0.5);
 // this.centerButtonText(this.optionsText, this.optionsButton);
  
-    this.optionsButton.on('pointerdown', function (pointer) {
-      this.scene.start('Options');
+    this.optionsButton.on('pointerup', function (pointer) {
+      this.scene.start('OptionsScene');
     }.bind(this));
 
     // CREDITS
