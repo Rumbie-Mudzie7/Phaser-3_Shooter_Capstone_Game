@@ -33,7 +33,7 @@ class LeaderBoardScene extends Phaser.Scene {
     this.add.text(300, position, 'RANK').setTint(0x00ff00);
     this.add.text(400, position, 'NAME').setTint(0x00ff00);
     this.add.text(600, position, 'SCORE').setTint(0x00ff00);
-    // const request = new Request();
+   
     this.playerScore = getScores();
     this.playerScore
       .then((response) => {
@@ -59,12 +59,12 @@ class LeaderBoardScene extends Phaser.Scene {
       .text(
         this.scale.width * 0.5,
         this.scale.height * 0.8,
-        'Press space to play again.',
+        'Press space to go back to the Menu.',
       )
       .setOrigin();
 
     this.input.keyboard.once('keydown-SPACE', () => {
-      this.scene.start('SpaceScene');
+      this.scene.start('TitleScene');
     });
   }
 }
