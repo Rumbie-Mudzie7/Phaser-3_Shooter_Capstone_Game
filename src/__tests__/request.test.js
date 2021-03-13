@@ -1,5 +1,5 @@
 import 'babel-polyfill';
-import { getScores, putScores } from '../api/request';
+import { createGame, getScores, putScores } from '../api/request';
 require('jest-fetch-mock').enableMocks();
 const regeneratorRuntime = require('regenerator-runtime');
 const response = {
@@ -42,3 +42,21 @@ describe('putScore', () => {
     };
   });
 });
+
+// describe('create a game with a valid name', () => {
+//   it('create a game to if the name is valid', () => {
+//     createGame().then((data) => {
+//       expect(data).toBeTruthy();
+//     });
+//   });
+// });
+
+
+
+// describe('retrieve the score', () => {
+//   it('return the score if exists', () => {
+//     getScores().then((data) => {
+//       expect(typeof data).toBe('object');
+//     });
+//   });
+// });

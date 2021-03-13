@@ -8,6 +8,7 @@ class GameOverScene extends Phaser.Scene {
 
     this.load.image('gameOverBg', '/assets/images/gameoverbg.png')
   }
+  
   create () {
     this.form = document.querySelector('#input-form')
     this.form.style.display = 'none'
