@@ -1,7 +1,8 @@
 import 'babel-polyfill';
-import { createGame, getScores, putScores } from '../api/request';
+import { getScores } from '../api/request';
+
 require('jest-fetch-mock').enableMocks();
-const regeneratorRuntime = require('regenerator-runtime');
+
 const response = {
   result: [
     {
@@ -50,7 +51,6 @@ describe('putScore', () => {
 //     });
 //   });
 // });
-
 
 
 // describe('retrieve the score', () => {

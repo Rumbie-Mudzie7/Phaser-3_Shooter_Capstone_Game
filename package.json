@@ -47,6 +47,7 @@
     "babel-polyfill": "^6.26.0",
     "jest-fetch-mock": "^3.0.3",
     "phaser": "^3.52.0",
+    "regenerator-runtime": "^0.13.7",
     "ts-jest": "^26.5.3"
   }
 }

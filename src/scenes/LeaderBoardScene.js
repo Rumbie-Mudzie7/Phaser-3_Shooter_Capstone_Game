@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import {getScores} from '../api/request';
+import { getScores } from '../api/request';
 
 // class LeaderBoardScene extends Phaser.Scene {
 //   constructor () {
@@ -33,28 +33,26 @@ class LeaderBoardScene extends Phaser.Scene {
     this.add.text(300, position, 'RANK').setTint(0x00ff00);
     this.add.text(400, position, 'NAME').setTint(0x00ff00);
     this.add.text(600, position, 'SCORE').setTint(0x00ff00);
-   
+
     this.playerScore = getScores();
     this.playerScore
       .then((response) => {
-        console.log(response);
         this.playerScore = response;
-        console.log(`The current value of variable this.playerScore: ${this.playerScore}`)
         this.playerSortedScore = this.playerScore.sort((a, b) => (a.score > b.score ? -1 : 1));
         position += 25;
-    this.playerSortedScore.forEach((result, index) => {
-      if (index < 10) {
-        this.add.text(300, position, `  ${index + 1} `).setTint(0xff0000);
+        this.playerSortedScore.forEach((result, index) => {
+          if (index < 10) {
+            this.add.text(300, position, `  ${index + 1} `).setTint(0xff0000);
 
-        this.add.text(400, position, `${result.user}`).setTint(0xff0000);
+            this.add.text(400, position, `${result.user}`).setTint(0xff0000);
 
-        this.add.text(600, position, `${result.score}`).setTint(0xff0000);
+            this.add.text(600, position, `${result.score}`).setTint(0xff0000);
 
-        position += 25;
-      }
-    });
-      })
-  
+            position += 25;
+          }
+        });
+      });
+
     this.add
       .text(
         this.scale.width * 0.5,

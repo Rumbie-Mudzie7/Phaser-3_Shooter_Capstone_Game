@@ -46,8 +46,3 @@ const getScores = async () => {
 };
 
 export { putScore, getScores, createGame };
-
-
-
-
-
