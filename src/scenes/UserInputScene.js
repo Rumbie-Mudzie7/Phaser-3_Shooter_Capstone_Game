@@ -2,6 +2,8 @@ import Phaser from 'phaser';
 
 const gameScore = {
   score: 0,
+  musicOn: true,
+  soundOn: true 
 };
 
 class UserInputScene extends Phaser.Scene {
@@ -30,7 +32,9 @@ class UserInputScene extends Phaser.Scene {
     this.returnKey.on('down', () => {
       if (this.nameInput.value) {
         gameScore.playerName = this.nameInput.value;
-        this.scene.start('SpaceScene');
+        this.form.style.display = 'none';
+        this.scene.stop();
+        this.scene.start('LoadingScene');
       }
     });
   }
