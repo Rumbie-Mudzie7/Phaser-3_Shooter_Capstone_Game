@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { gameScore } from './UserInputScene';
 
 class TitleScene extends Phaser.Scene {
   constructor() {
@@ -6,17 +7,23 @@ class TitleScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('button1', '/assets/images/green_button01.png');
-    this.load.image('button2', '/assets/images/green_button02.png');
+  
   }
 
   create() {
+
+    if(gameScore.musicOn === true) {
+      gameScore.backGroundMc.play();
+    } else {
+      gameScore.backGroundMc.stop();
+    }
+
     this.gameButton = this.add.sprite(this.scale.width / 2, this.scale.height / 2 - 170, 'button1').setInteractive();
 
     this.gameText = this.add.text(this.scale.width / 2, this.scale.height / 2 - 170, 'Play', { fontSize: '32px', fill: '#57154a' }).setOrigin(0.5, 0.5);
 
-    this.gameButton.on('pointerdown', () => {
-      this.scene.start('LoadingScene');
+    this.gameButton.on('pointerup', () => {
+      this.scene.start('SpaceScene');
     });
 
     this.input.on('pointerover', (event, gameObjects) => {
