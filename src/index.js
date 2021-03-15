@@ -25,13 +25,14 @@ const config = {
     },
   },
   scene: [
-    TitleScene,
-    LoadingScene,
     UserInputScene,
+    LoadingScene,
+    TitleScene,
     SpaceScene,
     GameOverScene,
     CreditsScene,
     LeaderBoardScene,
-    OptionsScene],
+    OptionsScene
+  ],
 };
 const game = new Phaser.Game(config);
