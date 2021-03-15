@@ -6,9 +6,7 @@ class OptionsScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('box', '/assets/images/grey_box.png');
-    this.load.image('checkedBox', '/assets/images/green_boxCheckmark.png');
-    this.load.audio('bgMusic', ['/assets/sounds/bgMusic.mp3']);
+ 
   }
 
   create() {
@@ -25,12 +23,12 @@ class OptionsScene extends Phaser.Scene {
     this.musicButton.setInteractive();
     this.soundButton.setInteractive();
 
-    this.musicButton.on('pointerdown', () => {
+    this.musicButton.on('pointerup', () => {
       this.musicOn = !this.musicOn;
       this.updateAudio();
     });
 
-    this.soundButton.on('pointerdown', () => {
+    this.soundButton.on('pointerup', () => {
       this.soundOn = !this.soundOn;
       this.updateAudio();
     });
