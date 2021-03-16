@@ -128,7 +128,7 @@ class SpaceScene extends Phaser.Scene {
     this.input.on('pointermove', pointer => {
       this.ship.x = pointer.x;
     });
-    this.input.on('pointerdown', pointer => {
+    this.input.on('pointerdown', () => {
       this.launchLaser();
     });
     this.input.keyboard.on('keydown', event => {

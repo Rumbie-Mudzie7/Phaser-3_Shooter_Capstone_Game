@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { gameScore} from './UserInputScene';
+import { gameScore } from './UserInputScene';
 
 class LoadingScene extends Phaser.Scene {
   constructor() {
@@ -11,14 +11,14 @@ class LoadingScene extends Phaser.Scene {
     const progressBox = this.add.graphics();
     progressBox.fillStyle(0x222222, 0.8);
     progressBox.fillRect(240, 270, 320, 50);
-    
+
     this.load.on('progress', (value) => {
       percentText.setText(`${parseInt(value * 100)}%`);
       progressBar.clear();
       progressBar.fillStyle(0xffffff, 1);
       progressBar.fillRect(250, 280, 300 * value, 30);
     });
-    this.load.on('fileprogress', (file) => {
+    this.load.on('fileprogress', () => {
     });
     this.load.on('complete', () => {
       progressBar.destroy();
@@ -55,13 +55,12 @@ class LoadingScene extends Phaser.Scene {
     this.load.image('checkedBox', '/assets/images/green_boxCheckmark.png');
     this.load.audio('bgMusic', ['/assets/sounds/bgMusic.mp3']);
     this.load.image('gameOverBg', '/assets/images/gameoverbg.png');
-
   }
 
   create() {
     const { width } = this.scale;
     const { height } = this.scale;
-    gameScore.backGroundMc = this.sound.add('bgMusic', {loop:true});
+    gameScore.backGroundMc = this.sound.add('bgMusic', { loop: true });
     this.add.text(width / 2, height / 2 - 200, 'Click Anywhere to Start Game', {
       font: '20px monospace',
       fill: '#ffffff',

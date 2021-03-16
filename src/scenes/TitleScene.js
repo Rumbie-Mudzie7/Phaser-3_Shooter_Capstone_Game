@@ -6,13 +6,8 @@ class TitleScene extends Phaser.Scene {
     super('TitleScene');
   }
 
-  preload() {
-  
-  }
-
   create() {
-
-    if(gameScore.musicOn === true) {
+    if (gameScore.musicOn === true) {
       gameScore.backGroundMc.play();
     } else {
       gameScore.backGroundMc.stop();

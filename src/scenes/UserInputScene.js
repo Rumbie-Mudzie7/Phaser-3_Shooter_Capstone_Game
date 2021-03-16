@@ -3,7 +3,7 @@ import Phaser from 'phaser';
 const gameScore = {
   score: 0,
   musicOn: true,
-  soundOn: true 
+  soundOn: true,
 };
 
 class UserInputScene extends Phaser.Scene {

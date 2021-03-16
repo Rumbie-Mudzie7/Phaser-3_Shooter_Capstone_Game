@@ -5,10 +5,6 @@ class OptionsScene extends Phaser.Scene {
     super('OptionsScene');
   }
 
-  preload() {
- 
-  }
-
   create() {
     this.musicOn = true;
     this.soundOn = true;
