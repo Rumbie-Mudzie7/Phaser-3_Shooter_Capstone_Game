@@ -8,7 +8,9 @@ class TitleScene extends Phaser.Scene {
 
   create() {
     if (gameScore.musicOn === true) {
-      gameScore.backGroundMc.play();
+      if(!gameScore.backGroundMc.isPlaying) {
+        gameScore.backGroundMc.play();
+      }
     } else {
       gameScore.backGroundMc.stop();
     }
