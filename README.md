@@ -13,7 +13,7 @@ Rue Space Shooter project demonstrates the Author's understanding of Game develo
 
 In this milestone, the following procedures were implemented, based on the final JavaScript Capstone specifications and requirements: -
 
-1. Writing the functions that hit the API to take a location and return the weather data for  that location.
+1.  Implementing a shooter game with Phaser library
 
 2. Writing the functions that process the JSON data being obtained from the API and returning an object with only the data required for the app.
 
