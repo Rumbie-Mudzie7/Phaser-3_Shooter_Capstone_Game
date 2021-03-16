@@ -2,7 +2,7 @@
 The Shooter_Game is creatively designed by implementing  the Phaser-3 Framework concepts.
 
 
-![Screenshot](src/images/city-weather.png)
+![Screenshot](../assets/space-shooter.gif)
 
 
 # LIVE DEMO 
