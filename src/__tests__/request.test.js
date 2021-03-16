@@ -1,5 +1,5 @@
 import 'babel-polyfill';
-import { getScores } from '../api/request';
+import { putScore, getScores } from '../api/request';
 
 require('jest-fetch-mock').enableMocks();
 
@@ -25,7 +25,7 @@ describe('Getscores ', () => {
     fetch.mockResponse(response);
     async () => {
       const result = await getScores();
-      expect(result).toEqual(response.result);
+      return expect(result).toEqual(response.result);
     };
   });
 });
@@ -38,8 +38,8 @@ describe('putScore', () => {
         user: 'Lynette',
         score: 890,
       };
-      const response = await putScores(player.user, player.score);
-      expect(response.result).toEqual('Leaderboard score updated successfully');
+      const response = await putScore(player.user, player.score);
+      return expect(response.result).toEqual('Leaderboard score updated successfully');
     };
   });
 });
