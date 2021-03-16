@@ -6,10 +6,6 @@ class GameOverScene extends Phaser.Scene {
     super('GameOverScene');
   }
 
-  preload() {
-    
-  }
-
   create() {
     this.add.image(0, 0, 'gameOverBg').setOrigin(0, 0);
     this.gameOverText = this.add.text(
