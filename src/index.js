@@ -32,7 +32,11 @@ const config = {
     GameOverScene,
     CreditsScene,
     LeaderBoardScene,
-    OptionsScene
+    OptionsScene,
   ],
 };
-const game = new Phaser.Game(config);
+
+(() => {
+  const game = new Phaser.Game(config);
+  return game;
+})();
