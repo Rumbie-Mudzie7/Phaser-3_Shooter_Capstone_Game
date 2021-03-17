@@ -1,49 +1,8 @@
 import Phaser from 'phaser';
 import { gameScore } from './UserInputScene';
 import { putScore } from '../api/request';
+import LaserGroup from './LaserGroup';
 
-class Laser extends Phaser.Physics.Arcade.Sprite {
-  constructor(scene, x, y) {
-    super(scene, x, y, 'laser');
-  }
-
-  trigger(x, y) {
-    this.body.reset(x, y);
-    this.setActive(true);
-    this.setVisible(true);
-    this.setVelocityY(-900);
-  }
-
-  // Lifespan function to keep lasers firing
-  preUpdate(time, delta) {
-    super.preUpdate(time, delta);
-    if (this.y <= 0) {
-      this.setActive(false);
-      this.setVisible(false);
-    }
-  }
-}
-class LaserGroup extends Phaser.Physics.Arcade.Group {
-  constructor(scene) {
-    // Call the super constructor, passing in a world and a scene
-    super(scene.physics.world, scene, { key: 'LaserGroup' });
-  }
-
-  triggerLaser(x, y) {
-    // Get the first available sprite in the group
-    this.createMultiple({
-      classType: Laser,
-      frameQuantity: 0, // maximum shots to be fired at an interval
-      active: false,
-      visible: false,
-      key: 'laser',
-    });
-    const laser = this.getFirstDead(true, x, y);
-    if (laser) {
-      laser.trigger(x, y);
-    }
-  }
-}
 class SpaceScene extends Phaser.Scene {
   constructor() {
     super('SpaceScene');
@@ -76,9 +35,7 @@ class SpaceScene extends Phaser.Scene {
       fill: '#fff',
       fontSize: 30,
     });
-    // this.gameOverText = this.add.text(50, 100, 'Game Over', {
-    //   fontSize: '15px', fill: '#fff'
-    // })
+
     const enemies = this.physics.add.group();
     const enemiesList = ['enemy1', 'enemy2'];
     function enemyGenerator() {
@@ -110,9 +67,6 @@ class SpaceScene extends Phaser.Scene {
       this.physics.pause();
       this.scene.stop('SpaceScene');
       this.scene.start('GameOverScene');
-      // this.input.on('pointerup', () => {
-      //   gameState.score = 0;
-      //   this.scene.restart();
     });
   }
 
