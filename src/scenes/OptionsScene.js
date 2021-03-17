@@ -28,7 +28,7 @@ class OptionsScene extends Phaser.Scene {
       fill: '##57154a',
     });
     Phaser.Display.Align.In.Center(this.menuText, this.menuButton);
-    this.menuButton.on('pointerdown', pointer => {
+    this.menuButton.on('pointerdown', () => {
       this.scene.start('TitleScene');
     });
   }
