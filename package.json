@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack",
+    "build": "webpack --mode production",
     "watch": "webpack --progress --watch"
   },
   "jest": {
