@@ -6,11 +6,6 @@ import LaserGroup from './LaserGroup';
 class SpaceScene extends Phaser.Scene {
   constructor() {
     super('SpaceScene');
-    this.ship;
-    this.laserGroup;
-    this.inputKeys;
-    this.cursors;
-    this.laserSound;
   }
 
   preload() {
