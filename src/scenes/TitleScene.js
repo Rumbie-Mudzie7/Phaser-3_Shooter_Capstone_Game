@@ -1,8 +1,10 @@
 import Phaser from 'phaser';
+
 class TitleScene extends Phaser.Scene {
   constructor() {
     super('TitleScene');
   }
+
   create() {
     this.gameButton = this.add.sprite(this.scale.width / 2, this.scale.height / 2 - 170, 'button1').setInteractive();
     this.gameText = this.add.text(this.scale.width / 2, this.scale.height / 2 - 170, 'Play', { fontSize: '32px', fill: '#57154a' }).setOrigin(0.5, 0.5);
