@@ -43,14 +43,14 @@ class LoadingScene extends Phaser.Scene {
     this.load.image('button2', '/assets/images/green_button02.png');
     this.load.image('box', '/assets/images/grey_box.png');
     this.load.image('checkedBox', '/assets/images/green_boxCheckmark.png');
-    this.load.audio('bgMusic', ['/assets/sounds/bgMusic.mp3']);
+    this.load.audio('background-music', ['/assets/sounds/bgMusic.mp3']);
     this.load.image('gameOverBg', '/assets/images/gameoverbg.png');
   }
   
   create() {
     const { width } = this.scale;
     const { height } = this.scale;
-    gameScore.backGroundMc = this.sound.add('bgMusic', { loop: true });
+    gameScore.backGroundMc = this.sound.add('background-music', { loop: true });
     this.add.text(width / 2, height / 2 - 200, 'Click Anywhere to Start Game', {
       font: '20px monospace',
       fill: '#ffffff',
