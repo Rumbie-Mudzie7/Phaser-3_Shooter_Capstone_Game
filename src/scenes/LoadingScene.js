@@ -43,7 +43,7 @@ class LoadingScene extends Phaser.Scene {
     this.load.image('button2', '/assets/images/green_button02.png');
     this.load.image('box', '/assets/images/grey_box.png');
     this.load.image('checkedBox', '/assets/images/green_boxCheckmark.png');
-    this.load.audio('bgMusic', ['assets/sounds/bgMusic.mp3']);
+    this.load.audio('bgMusic', ['/assets/sounds/bgMusic.mp3']);
     this.load.image('gameOverBg', '/assets/images/gameoverbg.png');
   }
   
