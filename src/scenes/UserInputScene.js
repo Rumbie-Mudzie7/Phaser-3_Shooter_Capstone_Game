@@ -19,7 +19,7 @@ class UserInputScene extends Phaser.Scene {
     this.nameInput = document.querySelector('#name');
     this.form.style.display = 'block';
     this.add
-      .text(360, 240, 'Please enter your name to get started', {
+      .text(360, 240, 'Press Enter after entering your name to get started', {
         fill: '#FFFFFF',
         fontSize: 16,
         fontWeight: 'bold',
