@@ -24,6 +24,11 @@ In this milestone, the following procedures were implemented, based on the final
 
 - Phaser 3 Framework
 - HTML5, JavaScript, ES6 and CSS3
+
+## Tools
+
+- npm
+- webpack
 - JSON
 - Jest
 
@@ -80,9 +85,10 @@ There are two ways of contributing to this project:
 Give a :star:️ if you like this project!
 
 ## Acknowledgments
+[OpenGameArt](https://opengameart.org/)
 [Webpack tutorial](https://actualize.teachable.com/courses/347362/lectures/5396444)
 [Microverse](https://www.microverse.org)
-[Odin Project](https://www.theodinproject.com/courses/javascript/lessons/weather-app)
+[Odin Project](https://www.notion.so/Shooter-game-203e819041c7486bb36f9e65faecba27)
 
 ## :memo: License
 
