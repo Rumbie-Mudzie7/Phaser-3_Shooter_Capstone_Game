@@ -1,21 +1,6 @@
 import Phaser from 'phaser';
 import { getScores } from '../api/request';
 
-// class LeaderBoardScene extends Phaser.Scene {
-//   constructor () {
-//     super('LeaderBoardScene')
-//   }
-
-//   async create() {
-//    const players = await getScores();
-//    const response = await JSON.parse(players);
-//    const result = response.filter((player, player2) => player2.score - player.score).slice(0, 5);
-//    this.input.on('pointerup', () => {
-//      console.log(result);
-//    })
-//   }
-// }
-
 class LeaderBoardScene extends Phaser.Scene {
   constructor() {
     super('LeaderBoardScene');

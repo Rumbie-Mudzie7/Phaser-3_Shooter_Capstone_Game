@@ -7,6 +7,7 @@ class LoadingScene extends Phaser.Scene {
   }
 
   preload() {
+
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();
     let loadingText;
@@ -38,13 +39,14 @@ class LoadingScene extends Phaser.Scene {
       },
     });
     loadingText.setOrigin(0.5, 0.5);
-    this.load.image('logo', '/assets/images/galaxy4.png');
-    this.load.image('button1', '/assets/images/green_button01.png');
-    this.load.image('button2', '/assets/images/green_button02.png');
-    this.load.image('box', '/assets/images/grey_box.png');
-    this.load.image('checkedBox', '/assets/images/green_boxCheckmark.png');
-    this.load.audio('background-music', ['/assets/sounds/bgMusic.mp3']);
-    this.load.image('gameOverBg', '/assets/images/gameoverbg.png');
+    this.load.image('logo', '../src/assets/images/galaxy4.png');
+    this.load.image('button1', '../src/assets/images/green_button01.png');
+    this.load.image('button2', '../src/assets/images/green_button02.png');
+    this.load.image('box', '../src/assets/images/grey_box.png');
+    this.load.image('checkedBox', '../src/assets/images/green_boxCheckmark.png');
+    this.load.audio('background-music', ['../src/assets/sounds/bgMusic.mp3']);
+    this.load.image('gameOverBg', '../src/assets/images/gameoverbg.png');
+
   }
   
   create() {

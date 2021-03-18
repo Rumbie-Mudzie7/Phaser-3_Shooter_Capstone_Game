@@ -9,12 +9,12 @@ class SpaceScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('laser', '/assets/images/bulet_3.png');
-    this.load.image('space-bg', '/assets/images/space-1.png');
-    this.load.image('ship', '/assets/images/Spaceship_tut.png');
-    this.load.image('enemy1', '/assets/images/Bat2.png');
-    this.load.image('enemy2', '/assets/images/enemy_game_spider.png');
-    this.load.audio('laserfire', '/assets/sounds/laserfire.ogg');
+    this.load.image('laser', '../src/assets/images/bulet_3.png');
+    this.load.image('space-bg', '../src/assets/images/space-1.png');
+    this.load.image('ship', '../src/assets/images/Spaceship_tut.png');
+    this.load.image('enemy1', '../src/assets/images/Bat2.png');
+    this.load.image('enemy2', '../src/assets/images/enemy_game_spider.png');
+    this.load.audio('laserfire', '../src/assets/sounds/laserfire.ogg');
   }
 
   create() {
