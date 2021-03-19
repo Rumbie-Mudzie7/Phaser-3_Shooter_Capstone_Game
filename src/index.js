@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import './styles.css';
 import SpaceScene from './scenes/SpaceScene';
 import { UserInputScene } from './scenes/UserInputScene';
 import LoadingScene from './scenes/LoadingScene';
