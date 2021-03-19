@@ -7,7 +7,6 @@ class LoadingScene extends Phaser.Scene {
   }
 
   preload() {
-
     const progressBar = this.add.graphics();
     const progressBox = this.add.graphics();
     let loadingText;
@@ -46,9 +45,8 @@ class LoadingScene extends Phaser.Scene {
     this.load.image('checkedBox', '../src/assets/images/green_boxCheckmark.png');
     this.load.audio('background-music', ['../src/assets/sounds/bgMusic.mp3']);
     this.load.image('gameOverBg', '../src/assets/images/gameoverbg.png');
-
   }
-  
+
   create() {
     const { width } = this.scale;
     const { height } = this.scale;
