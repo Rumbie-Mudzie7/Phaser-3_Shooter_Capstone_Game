@@ -2,7 +2,7 @@
 The Shooter_Game is creatively designed by implementing  the Phaser-3 Framework concepts.
 
 
-![Screenshot](./assets/images/space-shooter.png)
+![Screenshot](src/assets/images/space-shooter.png)
 
 
 # LIVE DEMO 
@@ -44,7 +44,7 @@ To get a local copy up and running follow these simple example steps.
 - Initialize npm by running `npm init` in your project terminal.
 - Install and run webpack. For guideance on installing and running webpack, [ please visit](https://actualize.teachable.com/courses/347362/lectures/5396444)
 - Run `npm install`.
-- Run `npm run watch` to start up the server.
+- Run `npm start` to start up the server.
 
 
 ### Running tests
