@@ -18,7 +18,7 @@ This section breaks down the instructions on how to play the game.
 
 ![Screenshot](src/assets/images/menu.png)
 1. Click `Play` to be directed to start playing the game.
-2. Click `Options` to the enable music, which by default is unchecked.
+2. Click `Options` to enable music, which by default is unchecked.
 3. Click `Credits` to view Author details.
 4. Click `leaders` to view the players with the highest scores in the top 10 Leaderboard.
 
@@ -39,4 +39,3 @@ This section breaks down the instructions on how to play the game.
 - Press `ENTER` to go back to the Menu.
 - Press `SPACE` to restart the game
 
-https://www.youtube.com/watch?v=MpGLUVbqoYQ 
