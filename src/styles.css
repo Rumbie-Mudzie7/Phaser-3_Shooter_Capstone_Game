@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#input-form {
+  display: none;
+  padding: 15px;
+  background-color: #570628;
+  width: 430px;
+  position: absolute;
+  top: 300px;
+  left: 162px;
+}
+
+#input-form input {
+  padding: 10px;
+  font-size: 20px;
+  width: 400px;
+}
